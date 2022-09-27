@@ -45,6 +45,7 @@ export interface ReactNativeCountryPickerProps {
     onSubmit?: Function;
     pickerBackgroundColor?: string;
     itemStyle?: ViewStyle;
+    pickerTextColor?: string;
 }
 
 export interface ReactNativeCountryPickerState {
@@ -112,6 +113,10 @@ export interface ReactNativePhoneInputProps<TextComponentType extends React.Comp
     pickerBackgroundColor?: string;
     /**
      * Custom styles for text in country picker eg. {{fontSize: 14}}
+     */
+    pickerTextColor?: string;
+    /**
+     * Custom picker panel content color
      */
     pickerItemStyle?: ViewStyle;
     /**
