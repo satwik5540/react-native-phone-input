@@ -7,6 +7,7 @@ import { Picker } from '@react-native-picker/picker';
 import Country from './country';
 import styles from './styles';
 import { ReactNativeCountryPickerProps, ReactNativeCountryPickerState } from './typings';
+import color = Mocha.reporters.Base.color;
 
 const PickerItem = Picker.Item;
 
@@ -67,7 +68,7 @@ export default class CountryPicker extends Component<ReactNativeCountryPickerPro
 
     // eslint-disable-next-line class-methods-use-this
     renderItem(country, index) {
-        return <PickerItem key={country.iso2} value={country.iso2} label={country.name} style={{color: this.props.pickerTextColor}} />;
+        return <PickerItem key={country.iso2} value={country.iso2} label={country.name} />;
     }
 
     render() {
@@ -108,11 +109,12 @@ export default class CountryPicker extends Component<ReactNativeCountryPickerPro
                                 ref={(ref) => {
                                     this.picker = ref;
                                 }}
-                                style={styles.bottomPicker}
+                                style={[styles.bottomPicker, { color: this.props.pickerTextColor, backgroundColor: this.props.pickerBackgroundColor }] }
                                 selectedValue={this.state.selectedCountry}
                                 onValueChange={(country) => this.onValueChange(country)}
                                 itemStyle={itemStyle}
                                 mode="dialog"
+                                dropdownIconColor={this.props.pickerTextColor}
                             >
                                 {Country.getAll().map((country, index) => this.renderItem(country, index))}
                             </Picker>
