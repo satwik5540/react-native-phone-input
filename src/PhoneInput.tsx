@@ -274,6 +274,7 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
                     confirmText={this.props.confirmText}
                     confirmTextStyle={this.props.confirmTextStyle}
                     pickerBackgroundColor={this.props.pickerBackgroundColor}
+                    pickerTextColor={this.props.pickerTextColor}
                     itemStyle={this.props.pickerItemStyle}
                     onPressCancel={this.props.onPressCancel}
                     onPressConfirm={this.props.onPressConfirm}
